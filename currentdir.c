@@ -13,18 +13,19 @@ char *cwd_search(char *filename, char *er)
 	char *ret;
 	int data = 0;
 	int i = 0;
-	
+
 	while (filename[data])
-		 data++;
+	{	 data++;
 	 ret = malloc(sizeof(char) * (data + 3));
 	 dir = opendir(".");
-	 if (!dir)
-	 {
-		 printf("Error! Unable to open directory.\n");
-		 exit(0);
-	 }
-	 while ((sd = readdir(dir)))
-	 {
+	}
+	if (!dir)
+	{
+	printf("Error! Unable to open directory.\n");
+	exit(0);
+	}
+	while ((sd = readdir(dir)))
+	{
 		 for (i = 0; sd->d_name[i] && filename[i]; i++)
 		 {
 			 if (sd->d_name[i] != filename[i])
