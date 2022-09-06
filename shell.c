@@ -29,9 +29,9 @@ void shell(int ac, char **av, char **env)
 			args[0] = path_finder(args[0], tmp, er);
 			if (args[0] == er)
 			{
-				 args[0] = cwd_search(filename, er);
-				 if (args[0] == filename)
-					 write(1, er, 5);
+				args[0] = cwd_search(filename, er);
+				if (args[0] == filename)
+					write(1, er, 5);
 			}
 		}
 		if (args[0] != er)
@@ -43,6 +43,6 @@ void shell(int ac, char **av, char **env)
 		(void)ac;
 	if (!av)
 		(void)av;
-	 if (!env)
-		 (void)env;
-}				
+	if (!env)
+		(void)env;
+}
