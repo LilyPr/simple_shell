@@ -36,11 +36,11 @@ char *path_finder(char *filename, char *tmp, char *er)
 				return (ret);
 		}
 		closedir(dir);
-		 filepath = strtok(NULL, ":");
-	 }
-	 path = NULL;
-	 free(tmp);
-	 return (er);
+		filepath = strtok(NULL, ":");
+	}
+	path = NULL;
+	free(tmp);
+	return (er);
 }
 /**
  * read_dir - opens and reads directory file names in search of file
@@ -57,7 +57,7 @@ char *read_dir(char *er, struct dirent *s, char *fil, int l, char *fp, char *t)
 {
 	int i = 0;
 	char *ret;
-
+	
 	for (i = 0; s->d_name[i] && fil[i]; i++)
 	{
 		if (s->d_name[i] != fil[i])
@@ -105,5 +105,5 @@ char *path_save(char *tmp, char *path)
 		i = 0;
 		return (path);
 	}
-	 return ("error");
+	return ("error");
 }
