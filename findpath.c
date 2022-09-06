@@ -13,30 +13,29 @@ char *path_finder(char *filename, char *tmp, char *er)
 	struct dirent *sd;
 	char *filepath, *path, *ret;
 	int data = 0;
-
-	 while (filename[data])
-		 data++;
-	 path = _getenv("PATH");
-	 tmp = path_save(tmp, path);
-	 filepath = strtok(tmp, ":");
-	 while (filepath)
-	 {
-		 dir = opendir(filepath);
-		 if (!dir)
-		 {
-			 printf("Error! Unable to open directory.\n");
-			 exit(0);
-		 }
-		 while ((sd = readdir(dir)))
-		 {
-			 ret = read_dir(er, sd, filename, data, filepath, tmp);
-			 if (ret != er)
-			 {
-				 closedir(dir);
-				 if (!(access(ret, X_OK)))
-					  return (ret);}
-		 }
-		 closedir(dir);
+       
+	while (filename[data])
+		data++;
+	path = _getenv("PATH");
+	tmp = path_save(tmp, path);
+	filepath = strtok(tmp, ":");
+	while (filepath)
+	{
+		dir = opendir(filepath);
+		if (!dir)
+		{
+			printf("Error! Unable to open directory.\n");
+			exit(0);
+		}
+		while ((sd = readdir(dir)))
+		{
+			ret = read_dir(er, sd, filename, data, filepath, tmp);
+			if (ret != er)
+				closedir(dir);
+			if (!(access(ret, X_OK)))
+				return (ret);
+		}
+		closedir(dir);
 		 filepath = strtok(NULL, ":");
 	 }
 	 path = NULL;

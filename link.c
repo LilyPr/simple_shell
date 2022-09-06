@@ -12,11 +12,11 @@ int link(char *check, char **args)
 
 	if (builtins_examines(args) == 1)
 		return (1);
-	 while (check[i] != '\0')
-	 {
-		 if (check[i] == '/')
-			 return (1);
-		 i++;
-	 }
-	 return (2);
+	while (check[i] != '\0')
+	{
+		if (check[i] == '/')
+			return (1);
+		i++;
+	}
+	return (2);
 }

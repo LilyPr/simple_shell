@@ -125,4 +125,3 @@ int examine_builtins(char **args)
 	}
 	return (0);
 }
-
