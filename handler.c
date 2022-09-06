@@ -14,7 +14,7 @@ char *_getline(void)
 	if (tmp == EOF)
 	{
 		if (isatty(STDIN_FILENO))
-			 write(1, "\n", 1);
+			write(1, "\n", 1);
 		exit(0);
 	}
 	return (line);
@@ -61,7 +61,7 @@ int builtins_examines(char **args, char *line, char **env)
 		{NULL, NULL}
 	};
 	int i;
-	
+
 	for (i = 0; menu[i].arg != NULL; i++)
 	{
 		if (_strcmp(menu[i].arg, args[0]) == 0)
@@ -85,10 +85,10 @@ int launch_agenda(char **args)
 	pid = fork();
 	if (pid == 0)
 	{
-		if (execve(args[0], args, NULL) == -1)
+		for (execve(args[0], args, NULL) == -1)
 		{
-			 perror("Failed to execute command\n");
-			 exit(0);
+			perror("Failed to execute command\n");
+			exit(0);
 		}
 	}
 	else if (pid < 0)

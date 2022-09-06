@@ -10,7 +10,7 @@
 int main(int ac, char **av, char **env)
 {
 	if (!ac)
-		 (void)ac;
+		(void)ac;
 	if (!av)
 		(void)av;
 	if (!env)

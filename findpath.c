@@ -13,7 +13,7 @@ char *path_finder(char *filename, char *tmp, char *er)
 	struct dirent *sd;
 	char *filepath, *path, *ret;
 	int data = 0;
-       
+
 	while (filename[data])
 		data++;
 	path = _getenv("PATH");
@@ -57,7 +57,7 @@ char *read_dir(char *er, struct dirent *s, char *fil, int l, char *fp, char *t)
 {
 	int i = 0;
 	char *ret;
-	
+
 	for (i = 0; s->d_name[i] && fil[i]; i++)
 	{
 		if (s->d_name[i] != fil[i])
@@ -81,7 +81,7 @@ char *read_dir(char *er, struct dirent *s, char *fil, int l, char *fp, char *t)
 char *path_save(char *tmp, char *path)
 {
 	int i = 0;
-	
+
 	if (!tmp)
 	{
 		tmp = malloc(sizeof(char) * 100);
