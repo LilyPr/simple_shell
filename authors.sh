@@ -7,7 +7,7 @@
 
  {
 	         cat <<-'EOH'
-        # This file lists all individuals having contributed content to the repository.
+        # This file lists all individuals have contribute in directory
         # For how it is generated, see `authors.sh`.
         EOH
 	        echo
