@@ -1,20 +1,15 @@
 #include "shell.h"
-
 /**
- * main - Entry point for shell, handles args to shell
- * @ac: Arg count
- * @av: Arr of args
- * @env: Environment
+ * main - shell
+ * @argc: number of arguments passed
+ * @argv: array of arguments to be exectued
  * Return: 0
- */
-int main(int ac, char **av, char **env)
+*/
+int main(int argc, char **argv)
 {
-	if (!ac)
-		(void)ac;
-	if (!av)
-		(void)av;
-	if (!env)
-		(void)env;
-	shell(ac, av, env);
+	(void)argc;
+
+	egg(argv[0]);
+
 	return (0);
 }

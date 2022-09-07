@@ -1,0 +1,49 @@
+#include "shell.h"
+/* functions needed to create and handle the path */
+
+/**
+ * generate-pth - generates the path
+ * Return: pointer to the head of a list
+*/
+path_t *generate_pth(void)
+{
+	path_t *head;
+	path_t *node;
+	char *t_path, *token;
+
+	t_path = NULL;
+	node = malloc(sizeof(path_t));/* node in linked list */
+	if (!node)
+		return (NULL);
+
+	t_path = find_environ("PATH"); /* env_findpoints to variable list */
+	if (!t_path)
+	{
+		free(node);
+		return (NULL);
+	}
+
+	token = _strtok(t_path, "=:;"); /*splits the path into tokens */
+	head = node;
+
+	while (token)
+	{
+		if (token)
+		node->ptr = _strdup(token);
+		token = _strtok(NULL, "=:;"); /*replaces with NULL*/
+		if (token)
+		{ /*put the token in the linked lists if it exists*/
+			node->next = malloc(sizeof(path_t));
+			if (!node->next)
+			{
+				free_path(head);
+				return (NULL);
+			}
+			node = node->next;
+		}
+		else
+			node->next = NULL;
+	}
+	free(t_path);
+	return (head);
+}
