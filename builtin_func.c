@@ -15,7 +15,7 @@ int built_func(char **args, char *input)
 	}
 	else if (_strcmp(args[0], "env") == 0)
 	{
-		print_enviornment();
+		print_environnment();
 		return (0);
 	}
 	else if (_strcmp(args[0], "setenv") == 0)
