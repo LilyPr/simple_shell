@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * enve - sets a linked list for the enviornment
+ * _env - sets a linked list for the enviornment
  * Return: head of the linked list
 */
-path_t *_enve(void)
+path_t *_env(void)
 {
 	path_t *head;
 	path_t *flow;

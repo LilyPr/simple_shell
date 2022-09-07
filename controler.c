@@ -28,7 +28,7 @@ void rock(char *coral)
 		}
 		args = bridge_line(line, "\n"); /*split line into arguments*/
 		if (built_func(args, line) == 1)
-			status = _exec(args, colar); /*determine when to exit */
+			status = _exec(args, coral); /*determine when to exit */
 
 		i = 0;
 		while (args[i] != NULL)

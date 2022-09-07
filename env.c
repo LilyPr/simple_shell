@@ -12,7 +12,7 @@ void _enve(char *s, char *value)
 	char *val, *newenv;
 	int va_len = 0, length = 0, count = 0;
 
-	if (!str || !value)
+	if (!s || !value)
 	{
 		perror("environment variable not passed");
 		exit(1);
@@ -46,8 +46,6 @@ void _enve(char *s, char *value)
 		while (node->next != NULL)
 			node = node->next;
 		variable->ptr = newenv;
-		node->next = variable;
-		variable->next = NULL;
 	}
 	free(val);
 }

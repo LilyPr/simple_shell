@@ -4,7 +4,7 @@
 
 petclinic="/var/tmp/Alpha/petclinic"
 
-echo "Hello, "$USER".  This script will register your pets in Alpha's petclinic database."
+echo "Hello, "$USER".  This register your pets in Alpha's petclinic database."
 
 echo -n "Enter it name and press [ENTER]: "
 read name
@@ -26,7 +26,7 @@ else
   if [ $age -lt 2 ]; then
     echo -n "What its favourite food like? "
     read food
-    echo "$name $age $colour" >> "$stuff" 
+    echo "$name $age $colour" >> "$stuff"
     echo "You are added to Alpha's petclinic list.  Thank you so much!"
   else
     echo "You are added to Alpha's petclinic list."

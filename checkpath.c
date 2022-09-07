@@ -1,8 +1,8 @@
 #include "shell.h"
 /**
- * check-pth - finds correct path based on input
+ * check_pth - finds correct path based on input
  * @head: head of the path list
- * @input: arguments passed
+ * @line: arguments passed
  * Return: NULL if not matched
 */
 
@@ -22,10 +22,6 @@ char *check_pth(path_t *head, char *line)
 		arguments = path_conc(temp->ptr, line);
 		if (!arguments)
 			return (NULL);
-/*		if (stat(arguments, &happy) == 0)
-		{
-			return (arguments);
-		}*/
 		free(arguments);
 		temp = temp->next;
 	}

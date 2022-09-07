@@ -33,7 +33,7 @@ int _executes(char **args, char *colar);
 
 /* path functions */
 path_t *generate_pth(void);
-char *check_path(path_t *head, char *input);
+char *check_pth(path_t *head, char *input);
 char *path_conc(char *s1, char *s2);
 
 /* built in functions*/
@@ -55,7 +55,7 @@ int count_wrd(char *str);
 
 /* execution */
 int _exec(char **args, char *rock);
-int fork_exec(char **args, char *colar);
+int _execute(char **args, char *coral);
 
 /* functions that free */
 void free_path(path_t *head);
@@ -81,6 +81,4 @@ void errenous(char **args, char *cmd, int errno);
 void sign_handle(int sign_handle);
 /*ssize_t getline(char **lineptr, size_t *n, FILE *stream);*/
 int find_match(const char *s1, char *s2);
-char *_getenv(const char *name);
-char *getpath(void);
 #endif

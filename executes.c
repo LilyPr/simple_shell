@@ -12,14 +12,14 @@ int _exec(char **args, char *coral)
 	if (args[0][0] == '/')
 	{
 		if (execve(args[0], args, NULL) == -1)
-			errenous(args, corall, 3);
+			errenous(args, coral, 3);
 	}
 	else
 	{
-		ex = (path_check(the_path, args[0]));
+		xc = (check_pth(_paths, args[0]));
 		if (!xc)
 			errenous(args, coral, 1);
-		if (execve(ex, args, NULL) == -1)
+		if (execve(xc, args, NULL) == -1)
 			errenous(args, coral, 2);
 	}
 	return (1);
@@ -39,7 +39,7 @@ int _execute(char **args, char *coral)
 	child_pid = fork();
 	if (child_pid == 0)
 	{
-		_exec(args, corall);
+		_exec(args, coral);
 		exit(0);
 	}
 	else if (child_pid == -1)

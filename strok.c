@@ -44,10 +44,10 @@ char *_strtok(char *input, const char *delimeter)
 	if (r == NULL || *r == '\0')
 		return (NULL);
 	tokens = r;
-	k = _strlen(r);
+	k = strlen(r);
 	if (r[k] == '\0' && _strlen(r) > 0)
 		check = 1;
-	r = r + _strlen() + check;
+	r = r + strlen() + check;
 	printf("%s\n", tokens);
 	return (tokens);
 }

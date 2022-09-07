@@ -41,7 +41,7 @@ int _putchar(char c)
 }
 
 /**
- * _strcpy_src - copies a string at specific index
+ * _strcpysource - copies a string at specific index
  * @dest: destination
  * @src: source (index)
  * @n: legnth of destination

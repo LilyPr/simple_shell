@@ -2,7 +2,7 @@
 /* functions needed to create and handle the path */
 
 /**
- * generate-pth - generates the path
+ * generate_pth - generates the path
  * Return: pointer to the head of a list
 */
 path_t *generate_pth(void)
@@ -16,7 +16,7 @@ path_t *generate_pth(void)
 	if (!node)
 		return (NULL);
 
-	t_path = find_environ("PATH"); /* env_findpoints to variable list */
+	t_path = find_enve("PATH"); /* env_findpoints to variable list */
 	if (!t_path)
 	{
 		free(node);

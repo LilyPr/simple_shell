@@ -45,7 +45,7 @@ char *_itoa(int num)
 		rank = (num / divider) % 10;
 		if (rank != 0 || (len >= 0 && street[c - 1] >= '0'))
 		{
-			street[ct] = rank + '0';
+			street[c] = rank + '0';
 			c++;
 			len--;
 		}
