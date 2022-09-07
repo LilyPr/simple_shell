@@ -12,7 +12,7 @@ void rock(char *coral)
 	int status, i;
 
 	enviornment = _env();
-	_path = path_gen();
+	_path = generate_pth();
 	count_line = 0;
 
 	status = 1; /*keeps loop running while shell is open */
@@ -43,4 +43,5 @@ void rock(char *coral)
 			free(args);
 	}
 	free_path(_path);
-	free_path(environment);
+	free_env(environment);
+}
