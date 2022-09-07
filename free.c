@@ -17,12 +17,12 @@ void free_path(path_t *head)
 }
 
 /**
- * free_env - frees the linked list associated with the env.
+ * free_enve - frees the linked list associated with the env.
  * @head: pointer to the head node of the list.
  *
  * Return: void.
  */
-void free_env(path_t *head)
+void free_enve(path_t *head)
 {
 	if (head == NULL)
 		return;
