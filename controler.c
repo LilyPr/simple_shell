@@ -11,7 +11,7 @@ void rock(char *coral)
 	char **args;
 	int status, i;
 
-	enviornment = _env();
+	enviornment = _enve();
 	_path = generate_pth();
 	count_line = 0;
 
