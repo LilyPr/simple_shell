@@ -1,12 +1,12 @@
 #include "shell.h"
 /**
-  * _env - creates a new enviornment variable from input
+  * _enve - creates a new enviornment variable from input
   * @s: input string
   * @value: value of new variable
   * Return: 0
 */
 
-void _env(char *s, char *value)
+void _enve(char *s, char *value)
 {
 	path_t *variable, *copy, *node;
 	char *val, *newenv;
@@ -17,7 +17,7 @@ void _env(char *s, char *value)
 		perror("enviornment variable not passed");
 		exit(1);
 	}
-	length = envmatch(s);
+	length = match_enve(s);
 	variable = malloc(sizeof(path_t));
 	if (!variable)
 		perror("error, error, error");
@@ -25,8 +25,8 @@ void _env(char *s, char *value)
 	va_len = _strlen(val);
 	newenv = _realloc(val, va_len, (va_len + _strlen(value) + 1));
 	_strncpy(newenv, value, va_len);
-	copy = enviroment;
-	node = enviroment;
+	copy = environment;
+	node = environment;
 	if (length >= 0)
 	{
 		while (count != (length - 1))
