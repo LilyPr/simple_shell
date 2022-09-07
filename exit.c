@@ -21,8 +21,8 @@ void shell_exit(char **args, char *input)
 			}
 			free(args);
 		}
-		free_path(the_path);
-		free_path(environment);
+		free_path(_paths);
+		free_enve(environment);
 		exit(0);
 }
 
