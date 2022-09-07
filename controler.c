@@ -42,6 +42,6 @@ void rock(char *coral)
 		if (args)
 			free(args);
 	}
-	free_path(_path);
-	free_env(environment);
+	free_path(_paths);
+	free_enve(environment);
 }
