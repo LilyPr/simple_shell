@@ -14,7 +14,7 @@ void _enve(char *s, char *value)
 
 	if (!str || !value)
 	{
-		perror("enviornment variable not passed");
+		perror("environment variable not passed");
 		exit(1);
 	}
 	length = match_enve(s);
