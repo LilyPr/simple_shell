@@ -13,7 +13,7 @@ int main(__attribute__((unused)) int argc, char **argv)
 	int total = 0, status = 1, lis = 0;
 
 	if (argv[1] != NULL)
-		file_read(argv[1], argv);
+		file_create(argv[1], argv);
 	signal(SIGINT, sign_handle);
 	while (status)
 	{
@@ -26,10 +26,10 @@ int main(__attribute__((unused)) int argc, char **argv)
 			continue;
 		}
 		history(input);
-		cmd = parse_cmd(input);
+		cmd = parse_check(input);
 		if (_strcmp(cmd[0], "exit") == 0)
 		{
-			exit_bultin(cmd, input, argv, total);
+			exit_builtin(cmd, input, argv, total);
 		}
 		else if (check_builtin(cmd) == 0)
 		{
@@ -39,7 +39,7 @@ int main(__attribute__((unused)) int argc, char **argv)
 		}
 		else
 		{
-			st = check_cmd(cmd, input, total, argv);
+			ls = check_command(cmd, input, total, argv);
 
 		}
 		free_all(cmd, input);
@@ -54,7 +54,7 @@ int main(__attribute__((unused)) int argc, char **argv)
  */
 int check_builtin(char **cmd)
 {
-	built_t show[] = {
+	built_t home[] = {
 		{"cd", NULL},
 		{"help", NULL},
 		{"echo", NULL},
@@ -67,9 +67,9 @@ int check_builtin(char **cmd)
 		return (-1);
 	}
 
-	while ((show + i)->code)
+	while ((home + i)->code)
 	{
-		if (_strcmp(cmd[0], (show + i)->code) == 0)
+		if (_strcmp(cmd[0], (home + i)->code) == 0)
 			return (0);
 		i++;
 	}

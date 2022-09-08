@@ -66,17 +66,17 @@ char *_itoa(unsigned int n)
 		i++;
 	}
 	s[i] = (n % 10) + '0';
-	array_rev(s, len);
+	rev_array(s, len);
 	s[i + 1] = '\0';
 	return (s);
 }
 /**
- *  array_rev - Reverse Array
+ * rev_array - Reverse Array
  * @arr:Array To Reverse
  * @len:Length Of Array
  * Return: Void(Reverse Array)
  */
-void array_rev(char *arr, int len)
+void rev_array(char *arr, int len)
 {
 	int i;
 	char tmp;

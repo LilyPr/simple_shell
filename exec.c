@@ -23,15 +23,14 @@ int handle_builtin(char **cmd, int er)
 	{
 		if (_strcmp(cmd[0], (home + i)->code) == 0)
 		{
-			return ((home + i)->show(cmd, er));
+			return ((home + i)->home(cmd, er));
 		}
 		i++;
 	}
 	return (-1);
 }
 /**
- * check_cmd - Excute Simple Shell Command (Fork,Wait,Excute)
- *
+ * check_command - Excute Simple Shell Command (Fork,Wait,Excute)
  * @cmd:Parsed Command
  * @input: User Input
  * @c:Shell Excution Time Case of Command Not Found
@@ -59,7 +58,7 @@ int check_command(char **cmd, char *input, int c, char **argv)
 	{
 		if (_strncmp(*cmd, "./", 2) != 0 && _strncmp(*cmd, "/", 1) != 0)
 		{
-			path_checker(cmd);
+			path_check(cmd);
 		}
 
 		if (execve(*cmd, cmd, environ) == -1)
@@ -75,7 +74,7 @@ int check_command(char **cmd, char *input, int c, char **argv)
 	return (0);
 }
 /**
- * signal_to_handel - Handle ^C
+ * sign_handle - Handle ^C
  * @sig:Captured Signal
  * Return: Void
  */

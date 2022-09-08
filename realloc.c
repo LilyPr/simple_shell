@@ -4,7 +4,7 @@
  **_realloc -  Reallocates A Memory Block Using Malloc And Free
  *@ptr: Pointer
  *@old_size: Previous Size Of The Pointer
- *@new_size: New Size Of The Pointer
+ *@nw_size: New Size Of The Pointer
  *Return: Void Pointer Rellocated Memory
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int nw_size)
@@ -67,12 +67,12 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 }
 /**
  * fill_array - Fill An Array By Constant Byte
- * @a:Void Pointer
+ * @arr:Void Pointer
  * @el: Int
  * @len:Length Int
  *Return: Void Pointer
  */
-void *fill_array(void *ar, int el, unsigned int len)
+void *fill_array(void *arr, int el, unsigned int len)
 {
 	char *p = a;
 	unsigned int i = 0;
@@ -104,5 +104,5 @@ void *_calloc(unsigned int size)
 	{
 		a[i] = '\0';
 	}
-	return (a);
+	return (a)
 }

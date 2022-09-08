@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * path_checker -  Search In $PATH For Excutable Command
+ * path_check -  Search In $PATH For Excutable Command
  * @cmd: Parsed Input
  * Return: 1  Failure  0  Success.
  */
-int path_checker(char **cmd)
+int path_check(char **cmd)
 {
 	char *path, *value, *cmd_path;
 	struct stat buf;

@@ -1,10 +1,10 @@
 #include "shell.h"
 /**
- * fillin - Fill File By User Input
+ * fill_in - Fill File By User Input
  * @input: User Input
  * Return: -1 Fail 0 Succes
  */
-int fillin(char *input)
+int fill_in(char *input)
 {
 	char *filename = ".simple_shell";
 	ssize_t fd, w;

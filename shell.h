@@ -52,7 +52,7 @@ char *_strdup(char *str);
 /**###### MEMORIE  MANGMENT ####*/
 
 void free_env(char **env);
-void *fill_array(void *ar, int el, unsigned int len);
+void *fill_array(void *arr int el, unsigned int len);
 char *_memcpy(char *dest, char *src, unsigned int n);
 void *_calloc(unsigned int size);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int nw_size);
@@ -76,17 +76,17 @@ int check_builtin(char **cmd);
 void set_env(char **envi);
 int check_command(char **token, char *line, int count, char **argv);
 void file_create(char *line, int count, FILE *fd, char **argv);
-void exit_bul_for_file(char **cmd, char *line, FILE *fd);
+void exit_builtfile(char **cmd, char *line, FILE *fd);
 
 /** ####BUL FUNC #####*/
 
-void hashtag_handler(char *buff);
+void hashtag_handle(char *buff);
 int history(char *input);
-int history_check(char **cmd, int er);
+int check_his(char **cmd, int er);
 int show_env(char **cmd, int er);
 int current_dir(char **cmd, int er);
 int check_help(char **cmd, int er);
-int echo_bul(char **cmd, int er);
+int echo_built(char **cmd, int er);
 void exit_builtin(char **cmd, char *input, char **argv, int c);
 int print_echo(char **cmd);
 
@@ -98,15 +98,15 @@ void pr_error(char **argv, int c, char **cmd);
 
 
 /**
- * struct bulltin - contain bultin to handle and function to excute
- * @command:pointer to char
- * @fun:fun to excute when bultin true
+ * struct builtin - contain bultin to handle and function to excute
+ * @code:pointer to char
+ * @home:home to excute when bultin true
  */
 
-typedef struct  builtinn
+typedef struct  builtin
 {
 	char *code;
-	int (*show)(char **line, int er);
+	int (*home)(char **line, int er);
 } builtin_t;
 
 #endif

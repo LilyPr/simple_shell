@@ -14,11 +14,11 @@ void print_number(unsigned int n)
 	_putchar(x % 10 + '0');
 }
 /**
- * print_number_in -Print Number Putchar
+ * print_numbers -Print Number Putchar
  * @n:Integer
  * Return: void
  */
-void print_number_in(int n)
+void print_numbers(int n)
 {
 	unsigned int x = n;
 
